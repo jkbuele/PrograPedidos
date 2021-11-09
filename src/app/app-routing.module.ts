@@ -1,16 +1,31 @@
+import { MenuComponent } from './pages/menu/menu.component';
+import { ValoracionComponent } from './pages/valoracion/valoracion.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ServiciosComponent } from './pages/servicios/servicios.component';
+
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+    path: 'inicio', component:  InicioComponent
+    },
+    {
+      path: 'login', component: LoginComponent
+    },
+    {
+      path: 'servicios', component: ServiciosComponent
+    },
+    {
+      path: 'valoracion', component: ValoracionComponent
+    },
+    {
+      path: 'menu', component: MenuComponent
+    },
+    
 ];
 
 @NgModule({

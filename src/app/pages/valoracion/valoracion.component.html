@@ -1,0 +1,31 @@
+<ion-header> 
+
+  <ion-toolbar> 
+    <ion-title> VALORACION</ion-title>
+
+    <ion-buttons slot="end">
+
+
+        <ion-button [routerLink]="['/inicio']">
+        <ion-icon color="dark" slot= "icon-only" name="home" ></ion-icon>
+        </ion-button>
+
+
+        <ion-button [routerLink]="['/login']">
+        <ion-icon color="dark" slot= "icon-only" name="person-circle" ></ion-icon>
+        </ion-button>
+
+        <ion-button  [routerLink]="['/servicios']"  >
+        <ion-icon color="dark" slot= "icon-only" name="beer" ></ion-icon>
+        </ion-button>
+
+     
+    </ion-buttons> 
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<a [routerLink]="['/valoracion']" routerLinkActive="router-link-active" >ir a inicio</a>
+
+<a [routerLink]="['/valoracion']" routerLinkActive="router-link-active" >ir a servicios</a>

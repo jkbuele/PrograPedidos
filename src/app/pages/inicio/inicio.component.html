@@ -1,0 +1,28 @@
+<ion-header> 
+
+  <ion-toolbar> 
+    <ion-title> INICIO 1 </ion-title>
+
+    <ion-buttons slot="end">
+
+        <ion-button (click)="getMenus()" >
+        <ion-icon  name="search" ></ion-icon>
+        </ion-button>
+
+        
+
+        <ion-button (click)="openMenu($event)" >
+        <ion-icon color="dark" slot= "icon-only" name="ellipsis-vertical" ></ion-icon>
+        </ion-button>
+
+
+    </ion-buttons> 
+    
+    
+  </ion-toolbar>
+</ion-header>
+
+
+
+  <a [routerLink]="['/login']" routerLinkActive="router-link-active" >ir a valoracion</a>
+ <a [routerLink]="['/valoracion']" routerLinkActive="router-link-active" >ir a inicio</a>
