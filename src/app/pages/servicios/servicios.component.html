@@ -1,7 +1,8 @@
 <ion-header> 
 
   <ion-toolbar> 
-    <ion-title> SERVICIOS </ion-title>
+    <ion-title> SERVICIOS
+       </ion-title>
 
     <ion-buttons slot="end">
 
@@ -20,11 +21,45 @@
 
 
   
+        
     </ion-buttons> 
     
   </ion-toolbar>
 </ion-header>
 
-<a [routerLink]="['/servicios']" routerLinkActive="router-link-active" >ir a valoracion</a>
+<ion-content>
+  <h1>ALMUERZOS</h1>
+  <div *ngFor="let menu  of menus">
+    
+    <h4>Sopas:{{menu.sopa}} </h4>
+    <h4>Plato fuerte :{{menu.platoFuerte}}</h4>
+    <h4>Jugo:{{menu.jugo}}</h4>
 
-<a [routerLink]="['/valoracion']" routerLinkActive="router-link-active" >ir a login</a>
+    
+
+
+  </div>
+
+
+</ion-content>
+
+<div class="ion-text-center">
+  <img alt="menu" src='https://recetacubana.com/wp-content/uploads/2019/09/filete-de-pescado-a-la-plancha-1024x683.webp' width="350" height="150"   >
+</div>
+
+
+
+
+<div class="ion-text-center">
+  <img alt="menu2" src='https://www.comedera.com/wp-content/uploads/2017/08/tacos-al-pastor-receta.jpg' width="350" height="150"  >
+</div>
+
+
+<div class="ion-text-center">
+  <img alt="menu3" src='http://1.bp.blogspot.com/-cgWXpziFMT0/TmokhiE0ozI/AAAAAAAAAPw/eBRVwD7R5NE/s1600/lomo+saltado+plato.jpg' width="350" height="150"  >
+</div>
+
+
+
+
+
