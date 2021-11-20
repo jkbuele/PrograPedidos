@@ -1,63 +1,67 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from 'src/app/models/models';
 
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',
   styleUrls: ['./servicios.component.scss'],
 })
+
 export class ServiciosComponent implements OnInit {
-
-  menu5: number = 3 ;
-  almuerzos: string= "ALMUERZOS";
-  enable: boolean = false;
-
-  menus1: number[]= [0, 4, 9, 9];
-
-  sopa: Menu = {
-    sopa: 'Andina',
-    platoFuerte: 'Burritos al pastor, arroz mexicano',
-    jugo: 'piña',
-    cubiertos: 3,
-    mesa: 'C'
-
-  }
-
-  menus: Menu[]=[
-    {
-      sopa: 'Andina',
-      platoFuerte: 'Burritos al pastor, arroz mexicano',
-      jugo: 'piña',
-      cubiertos: 3,
-      mesa: 'C'
-    },
-    {
-      sopa: 'Arveja con verde',
-      platoFuerte: 'Bistec de carne con papas fritas y arroz',
-      jugo: 'limonada',
-      cubiertos: 4,
-      mesa: 'C'
-    },
-    {
-      sopa: 'Locro de zapallo',
-      platoFuerte: 'Sudado de corvina, chifles, arroz',
-      jugo: 'papaya',
-      cubiertos: 1,
-      mesa: 'P'
-    },
-  ]
-
+ 
+  arrayMenus: {sopa: string, platofuerte: string, jugo: string, mesa: number, imagen: string} [];
+  arrayColas: {colas:string, imagenColas: string}[];
+  arrayJugos: {jugos: string, imagenJugos: string}[];
+  
   constructor() { 
-    console.log("estoy en el constructor");
-    this.getServicios();
 
-    this.menus.forEach( menus => {
-      console.log('la sopa es ->', menus.sopa);
-      
-    })
+     console.log("estoy en el constructor");
+     this.getServicios();
+     this.arrayMenus = [
+        {
+          sopa: 'Andina',
+          platofuerte: 'Burritos al pastor, arroz mexicano',
+          jugo: 'piña',
+          mesa: 3,
+          imagen: 'https://www.comedera.com/wp-content/uploads/2017/08/tacos-al-pastor-receta.jpg',
+        
+        
     
+        },
+        {
+          sopa: 'Arveja con verde',
+          platofuerte: 'Bistec de carne con papas fritas y arroz',
+          jugo: 'limonada',
+          mesa: 1,
+          imagen: 'https://i.pinimg.com/originals/4d/3a/03/4d3a03035c8827ff041a31236bb14663.jpg',
+          
     
+        
+        },
+        {
+          sopa: 'Locro de zapallo',
+          platofuerte: 'Sudado de corvina, chifles, arroz',
+          jugo: 'papaya',
+          mesa: 6,
+          imagen: 'https://micomidaperuana.com/wp-content/uploads/2019/07/receta-locro-con-arroz-1.jpg',
+          
+    
+        },
+      ]
 
+      this.arrayColas = [
+        {
+          colas: 'COCA COLA',
+          imagenColas: 'https://tiaecuador.vteximg.com.br/arquivos/ids/155901-1000-1000/2000367.jpg?v=636225933290600000',
+        
+        }
+      ]
+
+      this.arrayJugos = [
+        {
+          jugos: 'piña',
+          imagenJugos: 'https://tiaecuador.vteximg.com.br/arquivos/ids/155901-1000-1000/2000367.jpg?v=636225933290600000',
+        }
+      ]
     
   }
 
@@ -67,7 +71,7 @@ export class ServiciosComponent implements OnInit {
   }
 
   getServicios(){
-    console.log('estos son los menus ->', this.menus);
+    console.log('estos son los menus ->', this.arrayMenus);
   
   }
 

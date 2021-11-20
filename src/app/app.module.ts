@@ -20,11 +20,20 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 
 @NgModule({
-  declarations: [ 
-    AppComponent, InicioComponent, LoginComponent,ServiciosComponent, ValoracionComponent, MenuComponent],
+  declarations: [
+    AppComponent,
+     InicioComponent, 
+     LoginComponent,
+     ServiciosComponent, 
+     ValoracionComponent,
+      MenuComponent,
+      RegistroComponent
+    ],
+
     entryComponents: [],
 
     imports: [

@@ -19,45 +19,85 @@
         <ion-icon color="dark" slot= "icon-only" name="star" ></ion-icon>
         </ion-button>
 
-
-  
-        
     </ion-buttons> 
     
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>ALMUERZOS</h1>
-  <div *ngFor="let menu  of menus">
+
+<ion-content class="subtitulo"> 
+
+  <h1 class="tituloalmuerzos" > CATEGORIAS</h1>
+
+  <h3 class="subtitulo">Restaurantes</h3>
+
+  <ion-slides>
+  
+  <ion-slide *ngFor="let item of arrayMenus">
     
-    <h4>Sopas:{{menu.sopa}} </h4>
-    <h4>Plato fuerte :{{menu.platoFuerte}}</h4>
-    <h4>Jugo:{{menu.jugo}}</h4>
+    <ion-card >
+    <h4>Sopas: {{item.sopa}}</h4>
+    <h4>Plato fuerte :{{item.platofuerte}}</h4>
+    <h4>Jugo:{{item.jugo}}</h4>
+   </ion-card>
 
+    <div class="ion-text-center">
+      <img alt="menu" [src]='item.imagen' width="350" height="150"   >,
+
+    </div>
+
+  </ion-slide>
+</ion-slides>
+
+<h3 class="subtitulo">Secos</h3>
+
+  <ion-slides>
+  
+  <ion-slide *ngFor="let item of arrayMenus">
     
+    <ion-card no-margin color="danger">
+      
+      <img alt="menu" [src]='item.imagen' width="350" height="150"   >,
+    <h4>Sopas: {{item.sopa}}</h4>
+    <h4>Plato fuerte :{{item.platofuerte}}</h4>
+    <h4>Jugo:{{item.jugo}}</h4>
+   </ion-card>
+
+  </ion-slide>
+</ion-slides>
 
 
-  </div>
+<h3 class="subtitulo">BEBIDAS</h3>
+
+  <ion-slides>
+  <ion-slide *ngFor="let item of arrayColas">
+    
+    <ion-card>
+      <img alt="menu" [src]='item.imagenColas' width="350" height="150"   >,
+    <h4>Colas: {{item.colas}}</h4>
+    
+   </ion-card>
+  </ion-slide>
+</ion-slides>
+
+<ion-slides>
+  <ion-slide *ngFor="let item of arrayJugos">
+    
+    <ion-card>
+      <img alt="menu" [src]='item.imagenJugos' width="350" height="150"   >,
+    <h4>Jugos: {{item.jugos}}</h4>
+    
+   </ion-card>
+  </ion-slide>
+</ion-slides>
 
 
+  
 </ion-content>
 
-<div class="ion-text-center">
-  <img alt="menu" src='https://recetacubana.com/wp-content/uploads/2019/09/filete-de-pescado-a-la-plancha-1024x683.webp' width="350" height="150"   >
-</div>
 
 
 
-
-<div class="ion-text-center">
-  <img alt="menu2" src='https://www.comedera.com/wp-content/uploads/2017/08/tacos-al-pastor-receta.jpg' width="350" height="150"  >
-</div>
-
-
-<div class="ion-text-center">
-  <img alt="menu3" src='http://1.bp.blogspot.com/-cgWXpziFMT0/TmokhiE0ozI/AAAAAAAAAPw/eBRVwD7R5NE/s1600/lomo+saltado+plato.jpg' width="350" height="150"  >
-</div>
 
 
 

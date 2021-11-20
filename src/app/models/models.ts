@@ -12,5 +12,19 @@ export interface Merienda{
     jugo: string;
     cubiertos: number;
     mesa: 'C'| 'P';
+    imagen: string;
+    
   
   }
+
+  export interface UserI {
+    nombre: string;
+    direccion: string;
+    celular: number;
+    correo: string;
+    uid: string;
+    password: string;
+    perfil: 'cliente'| 'admin',
+  }
+
+  

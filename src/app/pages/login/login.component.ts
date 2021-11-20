@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { InteractionService } from 'src/app/services/interaction.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,25 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  usuarios: string= "admin";
-  password: number= 12345;
+  
+credenciales= {
+  correo: null,
+  password: null,
+}
+  
 
-  //usuario1: string= 'admin';
-  //contraseña1: number= 12345;
-
-  constructor() {
-    console.log("hola");
-    
-   }
+  constructor(private auth: AuthService,
+    private interaction: InteractionService,
+    private router: Router) {}
 
   ngOnInit() {}
 
-  login(){
-    if (this.usuarios == "admin" && this.password == 12345)
-    console.log("LOGIN EXITOSO");
-    //console.log(this.usuario1);
-    else{
-      console.log("INCORRECTO");
+  async login(){
+     await this.interaction.presentLoading('ingresando.....')
+    console.log('credenciales ->',this.credenciales);
+    const res = await this.auth.login(this.credenciales.correo, this.credenciales.password).catch( error =>{
+      console.log('error');
+      this.interaction.closeLoading();
+      this.interaction.presentToast('usuario o contraseña invalido')
+
+    } )
+    if (res){
+      console.log('res ->',res);
+      this.interaction.closeLoading();
+      this.interaction.presentToast('ingresado con exito');
+      this.router.navigate(['/inicio'])
       
     }
   }

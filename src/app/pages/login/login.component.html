@@ -1,33 +1,20 @@
-<ion-header class="ion-no-border"> 
+<ion-header class="ion-no-border" > 
+ 
+  <ion-toolbar > 
 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
 
-  
+    <ion-title>
+      LOGIN
+    </ion-title>
+    
 
-  <ion-toolbar> 
-    <ion-title> LOGUEAR</ion-title>
-
-    <ion-buttons slot="end">
-
-      <ion-button [routerLink]="['/inicio']">
-      <ion-icon color="dark" slot= "icon-only" name="home" ></ion-icon>
-      </ion-button>
-
-      <ion-button  [routerLink]="['/servicios']"  >
-      <ion-icon color="dark" slot= "icon-only" name="beer" ></ion-icon>
-      </ion-button>
-
-      <ion-button  [routerLink]="['/valoracion']"  >
-      <ion-icon color="dark" slot= "icon-only" name="star" ></ion-icon>
-      </ion-button>
-
-
-
-
-    </ion-buttons> 
+    
     
   </ion-toolbar>
 </ion-header>
-
 
 
 
@@ -45,17 +32,24 @@
   
     <ion-card-content>
       <ion-item>
-        <ion-label position="floating">Ingresa el Usuario:</ion-label>
-        <ion-input [(ngModel)]="usuarios" > </ion-input>
+        <ion-label position="floating" >Correo:</ion-label>
+        <ion-input [(ngModel)]="credenciales.correo"></ion-input>
       </ion-item>
     
       <ion-item>
-        <ion-label position="floating">Ingrese la contraseña:</ion-label>
-        <ion-input [(ngModel)]="password" > </ion-input>
+        <ion-label position="floating">Contraseña:</ion-label>
+        <ion-input [(ngModel)]="credenciales.password" ></ion-input>
       </ion-item>
 
-      <ion-button  (click)="login()"  expand= "full" size="large" color="secondary"  > iniciar sesion </ion-button>
-     
+     <ion-button (click)="login()">
+       Login
+     </ion-button>
+
+     <ion-button [routerLink]="['/registro']" routerLinkActive="router-link-active" >
+      Registrarse
+    </ion-button>
+
+
     </ion-card-content>
   </ion-card>
   <div class="ion-text-center">

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,22 +10,30 @@ export class FirestoreService {
 
   constructor(private firestore: AngularFirestore) { }
 
-    creatDoc(){
-      this.firestore.collection('Menus')
+    creatDoc(data:any, path:string, id:string){
 
-    }
-
-    getCollection(){
-
-      console.log('estoy por leer un menú');
+      const collection = this.firestore.collection(path);
+      return collection.doc(id).set(data);
       
-      this.firestore.collection('Menus').valueChanges().subscribe( (res) =>
-      {
-        console.log('ALMUERZOS --->',res);
-        
-
-      });
 
     }
+
+    getId(){
+      return this.firestore.createId();
+    }
+
+    getCollection <tipo> (path:string) {
+
+      const collection = this.firestore.collection<tipo>(path);
+      return collection.valueChanges();
+  
+    }
+  
+    getDoc<tipo> (path: string, id: string) {
+     return this.firestore.collection(path).doc<tipo>(id).valueChanges()
+    }
+
+
+     
   
 }

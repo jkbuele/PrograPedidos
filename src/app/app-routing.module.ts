@@ -7,6 +7,7 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,9 @@ const routes: Routes = [
     },
     {
       path: 'menu', component: MenuComponent
+    },
+    {
+      path: 'registro', component: RegistroComponent
     },
     
 ];
