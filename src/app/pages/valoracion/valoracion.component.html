@@ -1,104 +1,109 @@
 <ion-header> 
 
   <ion-toolbar> 
-    <ion-title> VALORACION</ion-title>
+    <h3 ion-title class="ion-text-center"> VALORACIÓN</h3>
 
-
-
-    
-
-    <ion-buttons slot="end">
-
-
-        <ion-button [routerLink]="['/inicio']">
-        <ion-icon color="dark" slot= "icon-only" name="home" ></ion-icon>
-        </ion-button>
-
-
-        <ion-button [routerLink]="['/login']">
-        <ion-icon color="dark" slot= "icon-only" name="person-circle" ></ion-icon>
-        </ion-button>
-
-        <ion-button  [routerLink]="['/servicios']"  >
-        <ion-icon color="dark" slot= "icon-only" name="beer" ></ion-icon>
-        </ion-button>
-
-     
-    </ion-buttons> 
-    
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     
   </ion-toolbar>
   
 </ion-header>
 
+
+
 <ion-content>
-
-  <H1>CALIFICANOS</H1>
-
-    <h3>
-    <ion-checkbox color="dark"></ion-checkbox>
+  <h3 ion-title class="ion-text-center"> Calificanos</h3>
+  <img src="https://c.tenor.com/fNBtQnC4-iYAAAAi/come-on-lets-go.gif">
+  
+    <ion-col col-sm size="4">
+      
+      <ion-card-content content>
+      </ion-card-content>
     
-    mala</h3>
+    </ion-col>   
 
-    <h3>
-    <ion-checkbox color="dark"></ion-checkbox>
-    regular</h3>
 
-    <h3>
-    <ion-checkbox color="dark"></ion-checkbox>
-    buena</h3>
+    <form>
+      <p>
+        <h5 label for="t1">¿Qué calificación nos da?<abbr title="Este campo es obligatorio" aria-label="required"><pre></pre></abbr></h5>
+        <input type="text" id="t1" name="servicio" list="l1" required
+               pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range ">
+        <datalist id="l1">
+          <option>Excelente</option>
+          <option>Buena</option>
+          <option>Regular</option>
+          <option>Mala</option>
+          <option>Pésima</option>
+         </datalist>
+     
+      <p>
+        <h5 label for="t2">¿Cuál es tu dirección de correo electrónico? </h5>
+        <input type="email" id="t2" name="email">
+      
+      <p>
+        <h5 label for="t3">Deja un mensaje</h5><pre></pre>
+        <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+     
+      <p>
+        <button>Enviar</button>
+      </p>
+    </form>
+  
     
     
-  <div class="ion-text-center">
-    <img alt="valoracionnn" src='https://media.istockphoto.com/vectors/popular-spoon-and-fork-symbol-premium-5-star-restaurant-vector-logo-vector-id1180524310?k=20&m=1180524310&s=170667a&w=0&h=V5F8zu2yOA2CUKlOk195nuEcKsW7VdSd5KnSVnFhqwI='  >
-  </div>
+    <ion-item-divider color="secondary">
+      <ion-label>
+       CATEGORIAS
+      </ion-label>
+    </ion-item-divider>
+    
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Accordion Item #1
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Accordion Item #2
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          
+          
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Accordion Item #3
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
 
-  
-  
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-forward-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 
-  
 
-  
+
+    
+    
 
 </ion-content>
-
-<ion-card>
-<ion-col col-sm size="4">
-  <ion-card no-margin color="danger">
-  <ion-card-content content>
-    <img src="https://c.tenor.com/fNBtQnC4-iYAAAAi/come-on-lets-go.gif">
-    <div> Button 1</div>
-  </ion-card-content>
-</ion-card>
-</ion-col>
-
-<ion-card class="sc-ion-card-ios-h sc">fdjjdj</ion-card>
-</ion-card>
-
-<ion-card class="sc-ion-card-ios-h sc">fdjjdj</ion-card>
-
-<ion-card class="sc-ion-card-ios-h sc">fdjjdj</ion-card>
-<ion-card class="sc-ion-card-ios-h sc">fdjjdj</ion-card>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

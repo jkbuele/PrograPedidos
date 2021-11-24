@@ -18,6 +18,7 @@ export class InteractionService {
     });
     toast.present();
   }
+  
   async presentLoading(mensaje: string) {
     this.loading = await this.loadingController.create({
       cssClass: 'my-custom-class',

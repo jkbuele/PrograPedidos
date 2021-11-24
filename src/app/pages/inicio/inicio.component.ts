@@ -1,4 +1,3 @@
-import { FirestoreService } from './../../services/firestore.service';
 import { MenuComponent } from './../menu/menu.component';
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
@@ -11,27 +10,29 @@ import { PopoverController } from '@ionic/angular';
 })
 export class InicioComponent implements OnInit {
 
-  constructor(
-                public popoverController: PopoverController,
-                private firestore: FirestoreService
-             ) { }
+  constructor(public popoverController: PopoverController) { }
 
   ngOnInit() {}
 
   async openMenu(ev: any){
-    console.log("abrir menu");
+    console.log('abrir menu lateral');
 
     const menu = await this.popoverController.create({
       component: MenuComponent,
-      translucent: false,
+      cssClass: 'my-custom-class',
+      translucent: true,
       event: ev
     });
     await menu.present();
-    
+   const { role } = await menu.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
-
-  getMenus(){
-    this.firestore.getCollection()
+   
   }
+  interface Inicio{
+    imagen: string
+    }
 
-}
+  
+
+

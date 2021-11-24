@@ -6,7 +6,7 @@ export interface Merienda{
   
   }
   
-  export interface Menu{
+  /*export interface Menu{
     sopa: string;
     platoFuerte: string;
     jugo: string;
@@ -15,7 +15,16 @@ export interface Merienda{
     imagen: string;
     
   
+  }*/
+
+  export interface Menu{
+    descripcion: string;
+    precio: number;
+    imagen: string;
+    
   }
+
+
 
   export interface UserI {
     nombre: string;

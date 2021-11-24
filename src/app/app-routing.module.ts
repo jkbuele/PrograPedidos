@@ -29,6 +29,15 @@ const routes: Routes = [
     {
       path: 'registro', component: RegistroComponent
     },
+    {
+      path: '', component: InicioComponent
+      
+    },
+    {
+      path: '**', redirectTo:'inicio', pathMatch:'full' 
+      
+    }
+    
     
 ];
 

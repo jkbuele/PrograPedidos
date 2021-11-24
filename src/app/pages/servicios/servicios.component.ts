@@ -8,60 +8,54 @@ import { Component, OnInit } from '@angular/core';
 
 export class ServiciosComponent implements OnInit {
  
-  arrayMenus: {sopa: string, platofuerte: string, jugo: string, mesa: number, imagen: string} [];
-  arrayColas: {colas:string, imagenColas: string}[];
-  arrayJugos: {jugos: string, imagenJugos: string}[];
+  arrayMenus: { descripcion: string, precio: number, imagen: string} [];
+  arrayEnsaladas: {descripcionE:string, imagenE: string}[];
+  
   
   constructor() { 
 
      console.log("estoy en el constructor");
      this.getServicios();
+
      this.arrayMenus = [
         {
-          sopa: 'Andina',
-          platofuerte: 'Burritos al pastor, arroz mexicano',
-          jugo: 'piña',
-          mesa: 3,
-          imagen: 'https://www.comedera.com/wp-content/uploads/2017/08/tacos-al-pastor-receta.jpg',
-        
-        
-    
+          descripcion:'Pastel de papas',
+          precio: 3.80,
+          imagen: 'http://www.recetariococina.net/fotos/pa-2.jpg '
         },
         {
-          sopa: 'Arveja con verde',
-          platofuerte: 'Bistec de carne con papas fritas y arroz',
-          jugo: 'limonada',
-          mesa: 1,
-          imagen: 'https://i.pinimg.com/originals/4d/3a/03/4d3a03035c8827ff041a31236bb14663.jpg',
-          
-    
-        
+          descripcion:'Pastel de pollo',
+          precio: 3.20,
+          imagen : 'https://i.pinimg.com/564x/e8/ca/7a/e8ca7aa367701d12afbdcef614fa5aa4.jpg '
         },
         {
-          sopa: 'Locro de zapallo',
-          platofuerte: 'Sudado de corvina, chifles, arroz',
-          jugo: 'papaya',
-          mesa: 6,
-          imagen: 'https://micomidaperuana.com/wp-content/uploads/2019/07/receta-locro-con-arroz-1.jpg',
-          
-    
-        },
+          descripcion:'Pastel de calabaza',
+          precio: 3.30,
+          imagen: 'https://content-cocina.lecturas.com/medio/2018/07/19/paso-a-paso-para-realizar-tarta-de-calabaza-con-especias-resultado-final_1db938b7_800x800.jpg'
+        }
+
+        
+        
       ]
 
-      this.arrayColas = [
+      this.arrayEnsaladas = [
         {
-          colas: 'COCA COLA',
-          imagenColas: 'https://tiaecuador.vteximg.com.br/arquivos/ids/155901-1000-1000/2000367.jpg?v=636225933290600000',
+          descripcionE:'Ensalada rusa chica',
+          imagenE: 'https://www.tqma.com.ec/images/com_yoorecipe/banner_superior/15272_1.jpg'
         
+        },
+        {
+          descripcionE:'Ensalada de tomate con lechuga',
+          imagenE: 'https://www.cocina-chilena.com/base/stock/Recipe/567-image/567-image_web.jpg'
+        
+        },
+        {
+          descripcionE:'Ensalada de atún y kale',
+          imagenE: 'https://dam.cocinafacil.com.mx/wp-content/uploads/2020/03/ensalada-de-pasta-con-atun-kale.jpg',
         }
       ]
 
-      this.arrayJugos = [
-        {
-          jugos: 'piña',
-          imagenJugos: 'https://tiaecuador.vteximg.com.br/arquivos/ids/155901-1000-1000/2000367.jpg?v=636225933290600000',
-        }
-      ]
+      
     
   }
 

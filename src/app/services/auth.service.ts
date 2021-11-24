@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   registrarUser(datos: UserI){
-    return this.authfirebase.createUserWithEmailAndPassword(datos.correo, datos.password)
+    return this.authfirebase.createUserWithEmailAndPassword(datos.correo, datos.password);
 
   }
 

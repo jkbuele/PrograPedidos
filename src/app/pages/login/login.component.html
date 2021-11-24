@@ -41,13 +41,11 @@
         <ion-input [(ngModel)]="credenciales.password" ></ion-input>
       </ion-item>
 
-     <ion-button (click)="login()">
-       Login
-     </ion-button>
+     
 
-     <ion-button [routerLink]="['/registro']" routerLinkActive="router-link-active" >
-      Registrarse
-    </ion-button>
+     <ion-button (click)="login()" expand="block" fill="outline">Login</ion-button>
+
+    <ion-button [routerLink]="['/registro']" routerLinkActive="router-link-active" expand="block" fill="outline">Registro</ion-button>
 
 
     </ion-card-content>

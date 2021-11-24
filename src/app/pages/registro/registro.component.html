@@ -49,20 +49,25 @@
         <ion-input  type= "password" [(ngModel)]="datos.password"></ion-input>
       </ion-item>
 
-     <ion-button (click)="registrar()">
+     <ion-button (click)="registrar()" expand="block" fill="outline">
       Registrarme
      </ion-button>
 
-     <ion-button [routerLink]="['/login']" routerLinkActive="router-link-active" >
-     O Login
-    </ion-button>
 
+    <ion-button [routerLink]="['/login']" routerLinkActive="router-link-active" expand="block" fill="outline"> Login</ion-button>
 
     </ion-card-content>
   </ion-card>
   <div class="ion-text-center">
     <img alt="login" src='https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824144_960_720.png' width="150" height="250"  >
   </div>
+
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="creando usuario">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>
 

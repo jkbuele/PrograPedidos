@@ -1,9 +1,12 @@
+import { FirestoreService } from './../../services/firestore.service';
 import { PopoverController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserI } from 'src/app/models/models';
+
 import { AuthService } from 'src/app/services/auth.service';
 import { InteractionService } from 'src/app/services/interaction.service';
-import { FirestoreService } from 'src/app/services/firestore.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +16,7 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 export class MenuComponent implements OnInit {
 
  login: boolean = false;
- rol: 'cliente'| 'empresa'= 'empresa'
+ rol: 'cliente'| 'admin'= null
 
   constructor(public popoverController: PopoverController,
     private router: Router,
@@ -27,9 +30,11 @@ export class MenuComponent implements OnInit {
         if(res){
           console.log('permanece logueado');
           this.login = true;
+          this.getDatosUser(res.uid)
         }else{
           console.log('no esta logueado');
           this.login= false;
+          this.router.navigate(['/login'])
         }
 
       })
@@ -43,6 +48,14 @@ export class MenuComponent implements OnInit {
     this.popoover.dismiss();
     
   }
+
+  irInicio(){
+    console.log('di click en inicio');
+    this.router.navigate(['/inicio'])
+    this.popoover.dismiss();
+    
+  }
+
   irServicios(){
     console.log('di click en servicios');
     this.router.navigate(['/servicios'])
@@ -56,15 +69,31 @@ export class MenuComponent implements OnInit {
     this.popoover.dismiss();
     
   }
+
+  loginApp(){
+    this.login = true;
+  }
+
   logout(){
     this.auth.logut()
     this.interaction.presentToast('sesion finalizada');
     this.router.navigate(['/login'])
   }
 
-  loginApp(){
+  
 
+  getDatosUser(uid: string) {
+    const path = 'Usuarios';
+    const id = uid;
+    this.firestore.getDoc<UserI>(path, id).subscribe( res => {
+        console.log('datos -> ', res);
+        if (res) {
+          this.rol = res.perfil
+        }
+    })
   }
+
+
 
   
 
