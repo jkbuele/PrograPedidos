@@ -1,3 +1,6 @@
+import { CalculadoraComponent } from './component/calculadora/calculadora.component';
+
+import { PerfilComponent } from './pages/perfil/perfil.component';
 import { environment } from './../environments/environment';
 import { MenuComponent } from './pages/menu/menu.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
@@ -31,7 +34,9 @@ import { RegistroComponent } from './pages/registro/registro.component';
      ServiciosComponent, 
      ValoracionComponent,
       MenuComponent,
-      RegistroComponent
+      RegistroComponent,
+      PerfilComponent,
+      CalculadoraComponent
     ],
 
     entryComponents: [],

@@ -21,7 +21,7 @@
 <ion-menu-toggle>
   <ion-item detail= "true"  [routerLink]="['/servicios']"   (click)="irServicios()">
     <ion-label>
-      servicios
+      Servicios
     </ion-label>
   </ion-item>
 </ion-menu-toggle>
@@ -29,10 +29,18 @@
 <ion-menu-toggle>
   <ion-item detail= "true" [routerLink]="['/valoracion']"  (click)="irValoracion()">
     <ion-label>
-      valoracion
+      Valoracion
     </ion-label>
   </ion-item>
+</ion-menu-toggle>
 
+
+<ion-menu-toggle>
+  <ion-item detail= "true" [routerLink]="['/perfil']"  (click)="irPerfil()">
+    <ion-label>
+      Perfil
+    </ion-label>
+  </ion-item>
 </ion-menu-toggle>
   
 <ion-menu-toggle *ngIf="login == false">
@@ -43,18 +51,12 @@
   </ion-item>
 </ion-menu-toggle>
 
-<ion-menu-toggle *ngIf="login && rol == 'cliente' " detail= "true">
-  <ion-item >
-     <ion-label>
-       Perfil
-     </ion-label>
-   </ion-item>
- </ion-menu-toggle>
+
 
 <ion-menu-toggle *ngIf="login ">
   <ion-item detail="true" (click)="logout()">
     <ion-label>
-     Logout
+     Salir
     </ion-label>
     <ion-icon ></ion-icon>
   </ion-item>

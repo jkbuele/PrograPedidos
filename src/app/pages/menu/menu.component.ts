@@ -49,6 +49,13 @@ export class MenuComponent implements OnInit {
     
   }
 
+  irPerfil(){
+    console.log('di click en perfil');
+    this.router.navigate(['/perfil'])
+    this.popoover.dismiss();
+    
+  }
+
   irInicio(){
     console.log('di click en inicio');
     this.router.navigate(['/inicio'])
@@ -75,7 +82,7 @@ export class MenuComponent implements OnInit {
   }
 
   logout(){
-    this.auth.logut()
+    this.auth.logout()
     this.interaction.presentToast('sesion finalizada');
     this.router.navigate(['/login'])
   }

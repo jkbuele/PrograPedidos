@@ -16,7 +16,7 @@ export class AuthService {
    return this.authfirebase.signInWithEmailAndPassword(correo, password)
   
   }
-  logut() {
+  logout() {
     this.authfirebase.signOut();
   }
 
@@ -27,6 +27,15 @@ export class AuthService {
 
   stateUser(){
     return this.authfirebase.authState
+  }
+  
+  async getUid() {
+    const user = await this.authfirebase.currentUser;
+    if (user) {
+      return user.uid;
+    } else {
+      return null;
+    }
   }
 
   

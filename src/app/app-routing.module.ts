@@ -1,3 +1,6 @@
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { CalculadoraComponent } from './component/calculadora/calculadora.component';
+
 import { MenuComponent } from './pages/menu/menu.component';
 import { ValoracionComponent } from './pages/valoracion/valoracion.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
@@ -30,13 +33,21 @@ const routes: Routes = [
       path: 'registro', component: RegistroComponent
     },
     {
+      path: 'perfil', component: PerfilComponent
+    },
+    {
       path: '', component: InicioComponent
       
     },
     {
       path: '**', redirectTo:'inicio', pathMatch:'full' 
       
-    }
+    },
+    
+    {
+      path: '', component: CalculadoraComponent
+      
+    },
     
     
 ];
